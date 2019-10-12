@@ -18,6 +18,7 @@ class TweetsController < ApplicationController
   end
 
   post '/tweets' do
+    binding.pry
     if logged_in?
       if params[:content]=""
         redirect to 'tweets/new'
