@@ -19,8 +19,7 @@ class TweetsController < ApplicationController
   end
 
   post '/tweets' do
-    @tweet = Tweet.create(params[:content])
-    @tweet.user = current_user
+    @tweet = Tweet.new(:content => params[:content], :user=> current_user)
     @tweet.save
     redirect to "tweets/#{@tweet.id}"
   end
