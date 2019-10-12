@@ -9,7 +9,7 @@ class TweetsController < ApplicationController
       end
   end
 
-  get '/tweets/new'
+  get '/tweets/new' do
     if logged_in?
       @user = current_user
       erb :'tweets/new'
